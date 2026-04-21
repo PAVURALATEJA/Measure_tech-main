@@ -3,43 +3,27 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Rajesh Sharma",
-    title: "Plant Manager",
-    company: "Bharat Dynamics Ltd.",
     content:
-      "MeasureTech has been our trusted calibration partner for over two years. Their accuracy, professionalism, and quick turnaround time have significantly improved our operational efficiency.",
+      "MeasureTech has been our trusted calibration partner. Their accuracy, professionalism, and quick turnaround time have significantly improved our operational efficiency.",
     rating: 5,
-    initials: "RS",
     color: "from-blue-500 to-cyan-500",
   },
   {
-    name: "Priya Nair",
-    title: "Quality Assurance Head",
-    company: "Tech Mahindra",
     content:
       "We were impressed by the level of detail in their calibration reports. The team is highly knowledgeable and handles complex instruments with ease. Highly recommended!",
     rating: 5,
-    initials: "PN",
     color: "from-orange-500 to-amber-500",
   },
   {
-    name: "Suresh Reddy",
-    title: "Maintenance Engineer",
-    company: "ISRO Facility",
     content:
       "Their on-site maintenance service was flawless. The engineers were prompt, professional, and resolved our instrument issues with minimal downtime. Exceptional service.",
     rating: 5,
-    initials: "SR",
     color: "from-green-500 to-teal-500",
   },
   {
-    name: "Kavitha Menon",
-    title: "Operations Director",
-    company: "BSNL Hyderabad",
     content:
       "MeasureTech consistently delivers on time and within budget. Their calibration solutions are reliable, well-documented, and compliant with all industry standards.",
     rating: 5,
-    initials: "KM",
     color: "from-violet-500 to-purple-500",
   },
 ];
@@ -78,7 +62,7 @@ export const Testimonials = () => {
         <div className="grid md:grid-cols-2 gap-6">
           {testimonials.map((t, index) => (
             <motion.div
-              key={t.name}
+              key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -105,21 +89,6 @@ export const Testimonials = () => {
                 <p className="text-foreground/85 text-base leading-relaxed mb-6 italic">
                   "{t.content}"
                 </p>
-
-                {/* Author */}
-                <div className="flex items-center gap-3 pt-5 border-t border-border/50">
-                  <div
-                    className={`w-11 h-11 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center text-white text-sm font-bold shrink-0`}
-                  >
-                    {t.initials}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-foreground text-sm">{t.name}</div>
-                    <div className="text-muted-foreground text-xs">
-                      {t.title} · {t.company}
-                    </div>
-                  </div>
-                </div>
               </div>
             </motion.div>
           ))}
